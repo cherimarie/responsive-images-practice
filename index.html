@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cat Life</title>
+
+  <meta charset="utf-8">
+  <style type="text/css">
+    body {
+      background-image: url("gradient-background.jpg");
+    }
+
+    img { max-width: 100%; }
+
+    .photo-container {
+      width: 90%;
+      margin: auto;
+      border: solid 1px rgba(189, 63, 191, 0.62);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .photo-frame {
+      /* equivalent to 49.5% of total browser width,
+      to make calculating srcset easier for us :) */
+      width: 55%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Cat Life</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Yawning</a></li>
+        <li><a href="#">Napping</a></li>
+        <li><a href="#">Clawing</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <section>
+    <h2>Community Submitted Photos</h2>
+
+    <div class="photo-container">
+      <div class="photo-frame">
+        <img srcset="yeah.jpg 1280w, yeah-800w.jpg 800w, yeah-400w.jpg 400w"
+              sizes="(max-width: 800px) 400px, (max-width: 1600px) 800px, (min-width: 1601px) 1200px"
+              src="yeah-800w.jpg"
+              alt="really cool cat yelling 'yeah!'">
+      </div>
+
+      <div class="photo-frame">
+        <img src="dragon.jpg" alt="a fire-breathing cat">
+      </div>
+
+      <div class="photo-frame">
+        <img src="grr.jpg" alt="a cat making a weird face">
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
